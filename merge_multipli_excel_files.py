@@ -19,3 +19,7 @@ for file_ in allFiles:
 stack = pd.concat(list_, axis=0)
 # output to excel or another database 
 stack.to_csv(r'filename.csv')
+
+#if there are space in the columns and encoding issue occurs
+df = df.replace(r'\n',' ', regex=True)
+df.to_csv("scrapped_document.csv", encoding="utf-8-sig")
